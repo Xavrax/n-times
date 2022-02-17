@@ -9,7 +9,7 @@ impl Repeater {
         }
     }
 
-    pub fn run<F>(&self, mut f: F) where F: FnMut() -> () {
+    pub fn run<F>(self, mut f: F) where F: FnMut() -> () {
         for _ in 0..self.n {
             f();
         }
@@ -21,6 +21,7 @@ mod should {
     use super::*;
     use test_case::test_case;
 
+    #[test_case(0)]
     #[test_case(1)]
     #[test_case(2)]
     #[test_case(3)]
