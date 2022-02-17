@@ -3,15 +3,14 @@ use crate::repeater::Repeater;
 mod repeater;
 
 pub trait Countable {
-    fn times(&self) -> Repeater;
+    fn times(self) -> Repeater;
 }
 
-// todo: is this cloning needed?
 impl<I> Countable for I
 where
-    I: Into<usize> + Clone,
+    I: Into<usize>
 {
-    fn times(&self) -> Repeater {
-        Repeater::new(self.clone().into())
+    fn times(self) -> Repeater {
+        Repeater::new(self.into())
     }
 }
