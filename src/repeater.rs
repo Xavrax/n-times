@@ -9,7 +9,7 @@ impl Repeater {
         }
     }
 
-    pub fn run<F>(self, mut f: F) where F: FnMut() -> () {
+    pub fn run<F>(self, mut f: F) where F: FnMut() {
         for _ in 0..self.n {
             f();
         }
