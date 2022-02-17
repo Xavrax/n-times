@@ -47,7 +47,6 @@ Additionally, is it possible to directly implement Countable trait to external s
 ```rust
 use n_times::Countable;
 
-#[derive(Clone)]
 struct Foo;
 
 impl Into<usize> for Foo {
