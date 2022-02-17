@@ -1,6 +1,6 @@
 use n_times::Countable;
-use test_case::test_case;
 use std::num::NonZeroUsize;
+use test_case::test_case;
 
 #[test_case(false => 0)]
 #[test_case(true => 1)]
@@ -62,6 +62,7 @@ fn should_work_with_usize(n: usize) {
 fn should_work_with_non_zero_usize(n: usize) {
     let n = NonZeroUsize::new(n).unwrap();
     let mut counter = 0;
+    some_condition.then(|| amount_of_something.times().run(|| println!("Hello World!")));
 
     n.times().run(|| {
         println!("{}", counter);

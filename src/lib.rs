@@ -7,7 +7,10 @@ pub trait Countable {
 }
 
 // todo: is this cloning needed?
-impl<I> Countable for I where I: Into<usize> + Clone {
+impl<I> Countable for I
+where
+    I: Into<usize> + Clone,
+{
     fn times(&self) -> Repeater {
         Repeater::new(self.clone().into())
     }
